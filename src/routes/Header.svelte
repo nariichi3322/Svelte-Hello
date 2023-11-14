@@ -1,8 +1,8 @@
 <script>
-    import { base } from '$app/paths';
     import { page } from '$app/stores';
     import logo from '$lib/images/svelte-logo.svg';
     import github from '$lib/images/github.svg';
+    import { base_path } from '$lib/env';
 </script>
 
 <header>
@@ -18,10 +18,10 @@
         </svg>
         <ul>
             <li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-                <a href="{base}/">Home</a>
+                <a href="{base_path}/">Home</a>
             </li>
             <li aria-current={$page.url.pathname === '/about' ? 'page' : undefined}>
-                <a href="{base}/about">About</a>
+                <a href="{base_path}/about">About</a>
             </li>
         </ul>
         <svg viewBox="0 0 2 3" aria-hidden="true">

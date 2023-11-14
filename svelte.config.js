@@ -1,7 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
-const dev = process.env.NODE_ENV === 'development';
+import { base_path } from './src/lib/env.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -24,7 +24,7 @@ const config = {
             fallback: '404.html'
         }),
         paths: {
-            base: dev ? '' : '/Svelte-Hello'
+            base: base_path
         }
     }
 };
